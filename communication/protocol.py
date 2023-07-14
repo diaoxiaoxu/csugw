@@ -29,7 +29,7 @@ class ProtocolMethod(Enum):
     SCRIPT = "SCRIPT"
 
     DEMO = "DEMO"
-
+    DIV = "DIV"
 
 class Field(Enum):
     ID = "ID"

@@ -29,6 +29,8 @@ def send_hook(server: Server, client: Node, message: Protocol or str):
     if message == ProtocolMethod.DEMO:
         message.content = f"{randint(1, 100)}"
 
+    if message == ProtocolMethod.DIV:
+        message.content = f"{randint(1,100)}"
     server.send(client, message)
 
     return False
@@ -41,7 +43,10 @@ def receive_hook(server: Server, client: Node, message: Protocol or str):
         # Show custom logic is being ran
         CLI.message_ok(f"DOUBLED: {message.content}", colr="BlueViolet")
     
-
+    if message == ProtocolMethod.DIV:
+        # Show custom logic is being ran
+        CLI.message_ok(f"DIV: {message.content}", colr="BlueViolet")
+ 
     return False
 
 
